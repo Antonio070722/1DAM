@@ -11,5 +11,6 @@ public class Ejercicio4 {
         int cantidadRecibida = sc.nextInt();
         int cambio = cantidadRecibida - importeCompra;
         System.out.println("Cambio a devolver: " + cambio);
+
     }
 }
