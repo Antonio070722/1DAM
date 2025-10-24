@@ -1,0 +1,201 @@
+package Utilidades;
+
+import java.util.Scanner;
+
+public class Utils {
+
+    public static void pedirNumeroUsuario(String textoInicial){
+        System.out.println();
+
+        Scanner sc = new Scanner(System.in);
+        //System.out.println(textoInicial); textoInicial: "Introduce un numero"
+        int numero = sc.nextInt();
+        System.out.println("Este numero: "
+        + numero + " me ha dado");
+
+    }
+
+    public static int pedirNumero(String textoInicial){
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Introduzca un numero");
+        int numero = sc.nextInt();
+        System.out.println("El numero introducido es " + numero);
+        return numero;
+    }
+
+//    public static int pedirNumeroAleatorio(int minimo, int maximo){
+//        int numeroAleatorio = 0;
+//
+//        System.out.println(Math.round(Math.random()*50));
+//
+//        System.out.println("Numero aleatorio UTILS: " + numeroAleatorio);
+//        System.out.println();
+//        return numeroAleatorio;
+//    }
+    public static int numeroAleatorio(){
+        int numAleatorio = 0;
+
+        System.out.println("El numero aleatorio obtenido es: " + Math.round(Math.random()*50));
+
+        return numAleatorio;
+    }
+
+    /**
+     * Metodo para solicitar una frase/cadena al usuario al usuario
+     * @param cadenaInicial texto que va a salir en pantalla al usuario
+     * @return la cadena introducida por el usuario
+     */
+
+    public static String pedirCadenaUsuario(String cadenaInicial){
+        String cadenaUsuario = "";
+        System.out.println(cadenaInicial);
+
+        Scanner sc = new Scanner(System.in);
+
+        cadenaUsuario = sc.nextLine();
+        return cadenaUsuario;
+    }
+
+    public static String pedirCadenaUsuarioSinTextoInicial(){
+        String cadenaUsuario = "";
+
+        Scanner sc = new Scanner(System.in);
+
+        cadenaUsuario = sc.nextLine();
+        return cadenaUsuario;
+    }
+
+    public static boolean esPrimo(int numero) {
+        if (numero <= 1) {
+            return false;
+        }
+        for (int i = 2; i <= Math.sqrt(numero); i++) {
+            if (numero % i == 0) return false;
+        }
+        return true;
+    }
+
+    public static void intercambioValores(int valor1, int valor2){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Introduce la primera variable");
+        int var1 = sc.nextInt();
+        System.out.println("Introduce la segunda variable");
+        int var2 = sc.nextInt();
+        System.out.println("Las variables introducidad antes del intercambio son las siguientes: " + var1 + ", " + var2 + ".");
+        var1 = var1 + var2;
+        var2 = var1 - var2;
+        var1= var1 - var2;
+        System.out.println("Las variables intercambiadas son: ");
+        System.out.println("Primera variable introducida: " + var1 + ".");
+        System.out.println("Segunda variable introducida: " + var2 + ".");
+    }
+
+    public static void hipoteca(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Introduce el Euribor: ");
+        float Euribor = sc.nextFloat();
+
+        System.out.println("Introduce el Diferencial:");
+        float Diferencial = sc.nextFloat();
+
+        System.out.println("Introduce el Capital:");
+        float Capital = sc.nextFloat();
+
+        System.out.println("Introduce el numero de plazos mensuales para pagar la hipoteca");
+        int Plazo = sc.nextInt();
+
+        //Interés anual
+        float interesAnual = Euribor + Diferencial;
+
+        //Interés mensual
+        float interesmen = interesAnual / (12*100); //Se divide entre 100 para pasar a decimal
+
+        //Fórmula
+        double numerador = interesmen * Math.pow(1 + interesmen, Plazo);
+        double denominador = Math.pow(1 + interesmen, Plazo) - 1;
+        double cuotaMen = Capital * (numerador/denominador);
+
+        //Resultado
+        System.out.println("La cuota mensual es de " + cuotaMen);
+    }
+
+    public static int encontrarMayor(int num1, int num2, int num3, int num4, int num5) {
+        int mayor = num1;
+
+        if (num2 > mayor) mayor = num2;
+        if (num3 > mayor) mayor = num3;
+        if (num4 > mayor) mayor = num4;
+        if (num5 > mayor) mayor = num5;
+
+        return mayor;
+    }
+
+    /**
+     *
+     * @param numero
+     * @return
+     */
+    public static int NumFactorial(int numero) {
+        int factorial = 1;
+
+        for(int i = 1; i <= numero ; i++){
+            System.out.println("Factorial: " + i + " multiplicado por: " + i);
+            factorial = factorial * i;
+        }
+        System.out.println("El resultado final es: " + factorial);
+        return factorial;
+    }
+
+    /**
+     *
+     * @param numeroFactorial
+     * @return
+     */
+    public static int factorialRecursivo(int numeroFactorial){
+        int factorial = 1;
+
+        if (numeroFactorial == 1){
+            factorial = 1;
+        } else {
+            factorial = numeroFactorial * factorialRecursivo(numeroFactorial - 1);
+        }
+
+        return factorial;
+    }
+
+    /**
+     * Método para que muestre un numero de digitos de la serie Fiboracci introducidos por el usuario
+     */
+    public static void mostrarSerieFibonacci(){
+
+        int nElementos = pedirNumero("Dame un numero " + "de elementos de la serie de Fibonacci");
+        int a = 1;
+        int b = 1;
+        int anterior = 0;
+        int posterior = 1;
+        System.out.println("Elementos Fibonacci: ");
+
+        for (int i = 0; i < nElementos; i++){
+//            int sumaElementos = a + b;
+//            a = b;
+//            b = sumaElementos;
+//
+//            System.out.println("\t" + sumaElementos);
+            int resultado = anterior + posterior;
+            anterior = posterior;
+            posterior = resultado;
+            System.out.println("\t" + resultado);
+        }
+    }
+    public static int mostrarSerieFiboracciRecursivamente(int elemento){
+        if (elemento == 0) {
+            return 0;
+        } else if (elemento == 1) {
+            return 1;
+        } else {
+            int result = mostrarSerieFiboracciRecursivamente(elemento-1) + mostrarSerieFiboracciRecursivamente(elemento-2);
+            return result;
+        }
+    }
+}
