@@ -8,9 +8,7 @@ public class ArraysPruebas {
         for (int i = 0; i < array.length; i++) {
             array[i] = Utils.pedirNumeroAleatorio(1,10);//CREAR METODO EN UTILS PARA QUE DE UN NUMERO ALEATORIO ENTRE LOS NUMEROS QUE SE PONGAN AL LLAMAR AL METODO
         }
-
         Utils.mostrarArray(array);
-
         while (estaOrdenado) {
             for (int i = 0; i < array.length; i++) {
                 if (array[i] > array[i+1]) {
@@ -20,7 +18,15 @@ public class ArraysPruebas {
                     estaOrdenado = false;
                 }
             }
+            for (int i = 0; i < array.length; i++) {
+                if(array[i] > array[i+1]){
+                    estaOrdenado = false;
+                    break;
+                }else estaOrdenado=true;
+            }
         }
+        System.out.println("El array ordenado");
+        Utils.mostrarArray(array);
     }
 
 
