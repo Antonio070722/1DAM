@@ -198,4 +198,23 @@ public class Utils {
             return result;
         }
     }
+    public static void arraybasicoexplicado(){
+        // Declarar e inicializar un array con valores fijos
+        int[] numeros = {1, 2, 3, 4, 5};
+        //    También se puede declarar un array de distintas formas:
+        //    - Con tamaño fijo (sin valores aún): int[] numeros = new int[5];
+        //      → Esto crea un array con 5 posiciones (todas con valor 0 por defecto).
+        //    - Asignando valores más tarde, por ejemplo:
+        //         int[] numeros = new int[3];
+        //         numeros[0] = 10;
+        //         numeros[1] = 20;
+        //         numeros[2] = 30;
+        //    - O directamente con valores como en este ejemplo.
+
+        // 2️⃣ Mostrar los valores usando un bucle for
+        System.out.println("Contenido del array:");
+        for (int i = 0; i < numeros.length; i++) {
+            System.out.println("Elemento en posición " + i + ": " + numeros[i]);
+        }
+    }
 }
