@@ -6,7 +6,7 @@ public class ArraysPruebas {
         int arrayOrdenado[] = new int[array.length];
         boolean estaOrdenado=true;
         for (int i = 0; i < array.length; i++) {
-            array[i] = Utils.pedirNumeroAleatorio(1,10);//CREAR METODO EN UTILS PARA QUE DE UN NUMERO ALEATORIO ENTRE LOS NUMEROS QUE SE PONGAN AL LLAMAR AL METODO
+            array[i] = Utils.pedirNumeroAleatorio(1,10);
         }
         Utils.mostrarArray(array);
         while (estaOrdenado) {
