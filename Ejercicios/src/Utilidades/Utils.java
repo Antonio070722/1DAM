@@ -1,5 +1,6 @@
 package Utilidades;
 
+import java.util.Random;
 import java.util.Scanner;
 
 public class Utils {
@@ -215,6 +216,17 @@ public class Utils {
         System.out.println("Contenido del array:");
         for (int i = 0; i < numeros.length; i++) {
             System.out.println("Elemento en posición " + i + ": " + numeros[i]);
+        }
+    }
+
+    public static int pedirNumeroAleatorio(int minimo, int maximo) {
+        Random random = new Random();
+        return random.nextInt(maximo - minimo + 1) + minimo; // Genera un número entre 'minimo' y 'maximo'
+    }
+
+    public static void mostrarArray(int[] array){
+        for (int i = 0; i < array.length; i++) {
+            System.out.println("Valor array["+i+"] ="+array[i]);
         }
     }
 }
