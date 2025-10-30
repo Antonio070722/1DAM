@@ -1,3 +1,5 @@
+package Tema6;
+
 import java.util.Scanner;
 
 public class luckyNumber {

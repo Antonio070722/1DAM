@@ -1,4 +1,5 @@
-import java.util.Objects;
+package Tema5;
+
 import java.util.Scanner;
 
 public class Cine {

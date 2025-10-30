@@ -28,6 +28,4 @@ public class ArraysPruebas {
         System.out.println("El array ordenado");
         Utils.mostrarArray(array);
     }
-
-
 }

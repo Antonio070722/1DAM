@@ -1,4 +1,4 @@
-package Nivel_inicial_tema3;
+package Tema3.Nivel_inicial_tema3;
 
 import java.util.Scanner;
 

@@ -1,3 +1,5 @@
+package Tema4;
+
 import java.util.Scanner;
 
 public class Make_a_wish {

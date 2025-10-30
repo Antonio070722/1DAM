@@ -1,8 +1,8 @@
-package Nivel_inicial_tema5;
+package Tema5.Nivel_inicial_tema5;
 
 import java.util.Scanner;
 
-public class Ejercicio4 {
+public class Ejercicio5 {
     public static void main(String args[]){
         Scanner sc = new Scanner(System.in);
         System.out.println("Introuzca el primer número");
@@ -16,20 +16,22 @@ public class Ejercicio4 {
         System.out.println("Introuzca el quinto número");
         int num5 = sc.nextInt();
 
+        int mayor = encontrarMayor(num1,num2,num3,num4,num5);
         int menor = encontrarMenor(num1,num2,num3,num4,num5);
 
-        mostrarResultado(menor);
+        mostrarResultadoMayor(mayor);
+        mostrarResultadoMenor(menor);
     }
+    private static int encontrarMayor(int num1, int num2, int num3, int num4, int num5) {
+        int mayor = num1;
 
-    /**
-     * Metodo para encontrar el menor
-     * @param num1
-     * @param num2
-     * @param num3
-     * @param num4
-     * @param num5
-     * @return Devuelve el mayor numero a la variable mayor
-     */
+        if (num2 > mayor) mayor = num2;
+        if (num3 > mayor) mayor = num3;
+        if (num4 > mayor) mayor = num4;
+        if (num5 > mayor) mayor = num5;
+
+        return mayor;
+    }
     private static int encontrarMenor(int num1, int num2, int num3, int num4, int num5) {
         int menor = num1;
 
@@ -40,10 +42,10 @@ public class Ejercicio4 {
 
         return menor;
     }
-    /**
-     * Método para mostrar el menor
-     */
-    private static void mostrarResultado(int menor){
-        System.out.printf("El menor número de los cinco es el: " + menor);
+    private static void mostrarResultadoMayor(int mayor){
+        System.out.println("El mayor número de los cinco es el: " + mayor);
+    }
+    private static void mostrarResultadoMenor(int menor){
+        System.out.println("El menor es el: " + menor);
     }
 }
