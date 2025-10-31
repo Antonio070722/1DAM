@@ -5,15 +5,12 @@ import java.util.Scanner;
 
 public class Utils {
 
-    public static void pedirNumeroUsuario(String textoInicial){
-        System.out.println();
-
+    public static int pedirNumeroUsuario(String textoInicial){
         Scanner sc = new Scanner(System.in);
+        System.out.println(textoInicial);
         //System.out.println(textoInicial); textoInicial: "Introduce un numero"
         int numero = sc.nextInt();
-        System.out.println("Este numero: "
-        + numero + " me ha dado");
-
+        return numero;
     }
 
     public static int pedirNumero(String textoInicial){
