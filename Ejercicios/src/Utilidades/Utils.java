@@ -74,6 +74,19 @@ public class Utils {
         return true;
     }
 
+    public static boolean esPrimoSinFor(int numero, int divisor){
+        if (numero < 2){
+            return false;
+        }
+        if (divisor > Math.sqrt(numero)){
+            return true;
+        }
+        if (numero % divisor == 0){
+            return false;
+        }
+        return esPrimoSinFor(numero, divisor+1);
+    }
+
     public static void intercambioValores(int valor1, int valor2){
         Scanner sc = new Scanner(System.in);
         System.out.println("Introduce la primera variable");
