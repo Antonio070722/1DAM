@@ -9,6 +9,7 @@ public class Ejercicio3 {
         int fintablas = 15;
         int i=1;
         do {
+            System.out.println("Tabla del " + inicio+ ": ");
             do {
                 System.out.println(inicio + " * " + i + " = " + inicio * i);
                 i++;
