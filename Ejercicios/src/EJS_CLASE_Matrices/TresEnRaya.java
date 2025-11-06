@@ -42,7 +42,7 @@ public class TresEnRaya {
     private static void inicializarMatriz(int[][] matriz) {
         for (int i = 0; i < matriz.length; i++) {
             for (int j = 0; j < matriz.length; j++) {
-
+                matriz[i][j]=2;
             }
         }
     }
@@ -123,8 +123,8 @@ public class TresEnRaya {
     }
 
     private static boolean comprobarCasillaValida(int[][] matriz, int fila, int columna) {
-        if (matriz[fila][columna]==2)
-            return true;
-        else return false;
+        if (matriz[fila][columna]==2){
+            return true;}
+        else {return false;}
     }
 }
