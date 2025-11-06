@@ -49,5 +49,4 @@ public class ArraysPruebas {
             } else System.out.println("No es palíndromo");
         }
     }
-
 }
