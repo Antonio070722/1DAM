@@ -14,7 +14,6 @@ public class TresEnRaya {
         //1-> turno humano
         int turno = Utils.numeroAleatorio(0,1);
 
-
         //El 0 son las fichas de la máquina y el 1 las del usuario
         int[][]matriz= new int[nFilas][nColum];
         inicializarMatriz(matriz);
