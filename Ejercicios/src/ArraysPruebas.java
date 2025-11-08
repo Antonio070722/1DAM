@@ -3,8 +3,8 @@ import Utilidades.Utils;
 public class ArraysPruebas {
     static void main() {
         //primermetodoarray();
-        int numeroaevaluar = Utils.pedirNumeroUsuario("Introduce el numero de cuatro cifras para evaluar");
-        palindromoarray(numeroaevaluar);
+//        int numeroaevaluar = Utils.pedirNumeroUsuario("Introduce el numero de cuatro cifras para evaluar");
+//        palindromoarray(numeroaevaluar);
     }
     public static void primermetodoarray(){
         int array[] = new int[10];

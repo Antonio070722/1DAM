@@ -13,15 +13,6 @@ public class Utils {
         return numero;
     }
 
-    public static int pedirNumero(String textoInicial){
-        Scanner sc = new Scanner(System.in);
-
-        System.out.println("Introduzca un numero");
-        int numero = sc.nextInt();
-        System.out.println("El numero introducido es " + numero);
-        return numero;
-    }
-
 //    public static int pedirNumeroAleatorio(int minimo, int maximo){
 //        int numeroAleatorio = 0;
 //
@@ -31,12 +22,9 @@ public class Utils {
 //        System.out.println();
 //        return numeroAleatorio;
 //    }
-    public static int numeroAleatorio(){
-        int numAleatorio = 0;
-
-        System.out.println("El numero aleatorio obtenido es: " + Math.round(Math.random()*50));
-
-        return numAleatorio;
+    public static int numeroAleatorio(int min, int max){
+            int aleatorio = (int)(Math.random() * (max - min + 1)) + min;
+            return aleatorio;
     }
 
     /**
@@ -180,7 +168,7 @@ public class Utils {
      */
     public static void mostrarSerieFibonacci(){
 
-        int nElementos = pedirNumero("Dame un numero " + "de elementos de la serie de Fibonacci");
+        int nElementos = pedirNumeroUsuario("Dame un numero " + "de elementos de la serie de Fibonacci");
         int a = 1;
         int b = 1;
         int anterior = 0;

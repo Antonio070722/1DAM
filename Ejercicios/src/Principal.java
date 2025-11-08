@@ -1,6 +1,7 @@
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 
+import EJS_CLASE_Matrices.TresEnRaya;
 import Utilidades.Utils;
 
 public class Principal {
@@ -15,6 +16,9 @@ public class Principal {
 //        Utils.pedirNumero();
 //    }
     public static void main (String [] args){
+
+        TresEnRaya.inicializarTablero();
+
 //      Utils.numeroAleatorio();
 //      pedirnotas();
 //        String opcion = solicitarCompra();

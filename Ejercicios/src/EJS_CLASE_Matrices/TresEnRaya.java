@@ -14,7 +14,6 @@ public class TresEnRaya {
         //1-> turno humano
         int turno = Utils.numeroAleatorio(0,1);
 
-
         //El 0 son las fichas de la máquina y el 1 las del usuario
         int[][]matriz= new int[nFilas][nColum];
         inicializarMatriz(matriz);
@@ -48,24 +47,11 @@ public class TresEnRaya {
     }
 
     private static boolean comprobarGanador(int[][] matriz) {
-        //Compruebo las filas de la matriz
         for (int i = 0; i < matriz.length; i++) {
-            for (int j = 0; j < matriz[0].length; j++) {
-                if(matriz[i][j]==0 || matriz[i][j]==1){
-                    return true;
-                }else return false;
             }
         }
-
-        //Compruebo las columnas de la matriz
-        for (int j = 0; j < matriz[0].length; j++) {
-            for (int i = 0; i < matriz.length; i++) {
-                if(matriz[i][j]==0 || matriz[i][j]==1){
-                    return true;
-                }else return false;
             }
         }
-
         return  false;
     }
 
