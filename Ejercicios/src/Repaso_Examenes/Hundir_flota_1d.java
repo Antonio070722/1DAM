@@ -11,20 +11,39 @@ public class Hundir_flota_1d {
         mostrarTablero(tablero);
         ponerBarco(tablero);
         mostrarTablero(tablero);
+        ataque(tablero);
+        mostrarTablero(tablero);
 
-        while(!hundido){
-        int posicionAtacar = Utils.pedirNumeroAleatorio(1, tablero.length-1);
-        System.out.println("Posición Atacar: "+posicionAtacar);
-        if (tablero[posicionAtacar].equals("A")){
-            System.out.println("AGUA");
-        }
-
-        if (tablero[posicionAtacar].equals("B")){
-            System.out.println("BOOOOOM!!! BARCO");
-            tablero[posicionAtacar]="X";
-        }
-        }
     }
+
+    private static void ataque(String[] tablero) {
+        int posicionAtacar = 0;
+        do{
+            posicionAtacar = Utils.pedirNumeroAleatorio(1, tablero.length-1);
+            System.out.println("Posición Atacar: "+posicionAtacar);
+            if (tablero[posicionAtacar].equals("A")){
+                System.out.println("AGUA");
+            }
+
+            if (tablero[posicionAtacar].equals("B")){
+                System.out.println("BOOOOOM!!! BARCO");
+                tablero[posicionAtacar]="X";
+            }
+        }
+        while(!hundido(tablero, posicionAtacar));
+
+
+    }
+
+    private static boolean hundido(String[] tablero, int posicionAtacar) {
+        boolean hundido = false;
+        for (int i = 0; i < tablero.length; i++) {
+
+        }
+
+        return hundido =false;
+    }
+
 
     private static void ponerBarco(String[] tablero) {
         int tamBarco = 3;
