@@ -17,6 +17,7 @@ public class Ejercicio2 {
         int consonantesTotales=0;
         String cadena = cadenaCaracteres.toLowerCase();
         for (int i = cadenaCaracteres.length()-1; i >= 0; i--) {
+            //Almacenamos en la variable caracter el caracter a analizar, facilitando el proceso
             char caracter = cadena.charAt(i);
             //si es letra:
             if (Character.isLetter(caracter)){
