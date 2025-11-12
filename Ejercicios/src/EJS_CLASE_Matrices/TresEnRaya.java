@@ -47,12 +47,36 @@ public class TresEnRaya {
     }
 
     private static boolean comprobarGanador(int[][] matriz) {
+        int casillaAnterior=matriz[0][0];
+        boolean ganador=false;
+
         for (int i = 0; i < matriz.length; i++) {
+            if (matriz[i][0] == matriz[i][1] && matriz[i][0] == matriz[i][2] && matriz[i][0]!=2){
+                ganador=true;
             }
         }
+        for (int j = 0; j < matriz.length; j++) {
+            if (matriz[0][j] == matriz[1][j] && matriz[0][j] == matriz[2][j] && matriz[0][j]!=2){
+                ganador=true;
             }
         }
-        return  false;
+        //Compruebo las filas de la matriz
+//        for (int i = 0; i < matriz.length; i++) {
+//            for (int j = 0; j < matriz[0].length; j++) {
+//                if(matriz[i][j]==0 || matriz[i][j]==1){
+//                    return true;
+//                }else return false;
+//            }
+//        }
+//        //Compruebo las columnas de la matriz
+//        for (int j = 0; j < matriz[0].length; j++) {
+//            for (int i = 0; i < matriz.length; i++) {
+//                if(matriz[i][j]==0 || matriz[i][j]==1){
+//                    return true;
+//                }else return false;
+//            }
+//        }
+        return false;
     }
 
     private static void verTablero(int[][] matriz, int turno) {
