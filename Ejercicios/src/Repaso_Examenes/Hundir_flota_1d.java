@@ -32,15 +32,21 @@ public class Hundir_flota_1d {
         }
         while(!hundido(tablero, posicionAtacar));
 
+        System.out.println("BARCO HUNDIDO!!!!!");
 
     }
 
     private static boolean hundido(String[] tablero, int posicionAtacar) {
         boolean hundido = false;
+        int totalHundidos=0;
         for (int i = 0; i < tablero.length; i++) {
-
+            if(tablero[i].equals("X")){
+                totalHundidos++;
+            }
         }
-
+        if (totalHundidos==3){
+            return hundido =true;
+        }
         return hundido =false;
     }
 
