@@ -6,12 +6,13 @@ public class Hundir_flota_1d {
     static void main(String[] args) {
         int fila = 8;
         String[] tablero = new String[fila];
+        int tamBarco = 3;
         System.out.println("\n******** HUNDIR LA FLOTA ********\n");
         incializarTablero(tablero);
         mostrarTablero(tablero);
-        ponerBarco(tablero);
+        ponerBarco(tablero, tamBarco);
         mostrarTablero(tablero);
-        ataque(tablero);
+        ataque(tablero, tamBarco);
 //        mostrarTablero(tablero);
 
     }
@@ -24,15 +25,16 @@ public class Hundir_flota_1d {
      * de barco hundido y el número de intentos de la máquina.
      * @param tablero
      */
-    private static void ataque(String[] tablero) {
+    private static void ataque(String[] tablero, int tamBarco) {
         int posicionAtacar = 0;
         int intentos = 0;
         int[] repetidos = new int[tablero.length];
         int contadorNumsUsados=0;
         do{
             do {
-                posicionAtacar = Utils.pedirNumeroAleatorio(1, tablero.length-1);
+                posicionAtacar = Utils.pedirNumeroAleatorio(0, tablero.length-1);
             }while (esRepetido(posicionAtacar, repetidos, contadorNumsUsados));
+
             repetidos[contadorNumsUsados] = posicionAtacar;
             contadorNumsUsados++;
 
@@ -49,14 +51,13 @@ public class Hundir_flota_1d {
             }
             intentos++;
         }
-        while(!hundido(tablero)&&intentos<5);
+        while(!hundido(tablero, tamBarco)&&intentos<5);
 
-        if (hundido(tablero)){
+        if (hundido(tablero, tamBarco)){
             System.out.println("\n\nBARCO HUNDIDO!!!!!, gana la máquina");
-            System.out.println("Intentos: "+intentos);
+            System.out.println("Ha necesitado "+intentos+" intentos.");
         }else{
-            System.out.println("\n\nHAS GANADO!!!, la máquina se ha quedado sin intentos");
-            System.out.println("Intentos: "+intentos);
+            System.out.println("\n\nHAS GANADO!!!, la máquina se ha quedado sin intentos (" + intentos+")");
         }
     }
 
@@ -84,7 +85,7 @@ public class Hundir_flota_1d {
      *                y, si es X se suma al contador, que cuando sea 3 el total de hundidos devuelve true.
      * @return
      */
-    private static boolean hundido(String[] tablero) {
+    private static boolean hundido(String[] tablero, int tamBarco) {
         boolean hundido = false;
         int totalHundidos=0;
         for (int i = 0; i < tablero.length; i++) {
@@ -92,15 +93,14 @@ public class Hundir_flota_1d {
                 totalHundidos++;
             }
         }
-        if (totalHundidos==3){
+        if (totalHundidos==tamBarco){
             return hundido =true;
         }
         return hundido =false;
     }
 
 
-    private static void ponerBarco(String[] tablero) {
-        int tamBarco = 3;
+    private static void ponerBarco(String[] tablero, int tamBarco) {
         int posicionInicial = Utils.pedirNumeroUsuario("\nDame la posición del barco de "+tamBarco+" posiciones.");
 
         while(!posicionCorrecta(posicionInicial, tamBarco, tablero)){
