@@ -49,10 +49,15 @@ public class Hundir_flota_1d {
             }
             intentos++;
         }
-        while(!hundido(tablero));
+        while(!hundido(tablero)&&intentos<5);
 
-        System.out.println("\n\nBARCO HUNDIDO!!!!!");
-        System.out.println("Intentos: "+intentos);
+        if (hundido(tablero)){
+            System.out.println("\n\nBARCO HUNDIDO!!!!!, gana la máquina");
+            System.out.println("Intentos: "+intentos);
+        }else{
+            System.out.println("\n\nHAS GANADO!!!, la máquina se ha quedado sin intentos");
+            System.out.println("Intentos: "+intentos);
+        }
     }
 
     /**
