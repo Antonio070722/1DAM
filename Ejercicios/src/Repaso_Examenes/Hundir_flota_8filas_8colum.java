@@ -61,7 +61,7 @@ public class Hundir_flota_8filas_8colum {
         int coordenada = 0;
         do{
             coordenada=Utils.pedirNumeroUsuario("Introduce el número para poner el barco: ");
-             if (coordenada+tamano >= tablero.length){
+             if (coordenada+tamano-1 >= tablero.length){
                  System.out.println("Coordenada incorrecta");
              }else valida = true;
 
