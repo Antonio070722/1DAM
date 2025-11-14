@@ -15,6 +15,7 @@ public class Hundir_flota_8filas_8colum {
         inicializarTablero8x8(tablero);
         mostrarTablero(tablero);
         tamañoBarco(tablero, estadoFila, grande, mediano, pequeño);
+
     }
 
     private static void tamañoBarco(String[][] tablero, int estadoFila, int grande, int mediano, int pequeño) {
@@ -81,7 +82,7 @@ public class Hundir_flota_8filas_8colum {
     private static void mostrarTablero(String[][] tablero) {
         for (int i = 0; i < tablero.length; i++) {
             for (int j = 0; j < tablero.length; j++) {
-                System.out.print(tablero[i][j]+"\t");
+                System.out.print(tablero[i][j]+"\t\t");
             }
             System.out.println("\n");
         }
