@@ -49,6 +49,11 @@ public class Hundir_flota_8filas_8colum {
                     ponerBarcos(tablero, 1, i);
                     pequeño--;
                     break;
+                case "":
+                    break;
+                default:
+                    System.out.println("Introduce correctamente el tamaño, si no quieres poner nada en una fila, pulsa enter.");
+                    tamañoBarco(tablero, i, grande, mediano, pequeño);
             }
             System.out.println("Tamaños de barcos disponibles: \n- Grande: 5 espacios. Saldo: "+grande+".\n- Mediano: 3 espacios. Saldo 4.\n- Pequeño: 1 espacio. Saldo: 2.");
             mostrarTablero(tablero);
