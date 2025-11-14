@@ -7,7 +7,7 @@ public class Utils {
 
     public static int pedirNumeroUsuario(String textoInicial){
         Scanner sc = new Scanner(System.in);
-        System.out.println(textoInicial);
+        System.out.print(textoInicial);
         //System.out.println(textoInicial); textoInicial: "Introduce un numero"
         int numero = sc.nextInt();
         return numero;
@@ -35,7 +35,7 @@ public class Utils {
 
     public static String pedirCadenaUsuario(String cadenaInicial){
         String cadenaUsuario = "";
-        System.out.println(cadenaInicial);
+        System.out.print(cadenaInicial);
 
         Scanner sc = new Scanner(System.in);
 

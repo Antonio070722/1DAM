@@ -20,7 +20,7 @@ public class Hundir_flota_8filas_8colum {
     private static void tamañoBarco(String[][] tablero, int estadoFila, int grande, int mediano, int pequeño) {
         String[] letras = {"A","B","C","D","E","F","G","H"};
         String tamañoBarco=" ";
-        System.out.println("Tamaños de barcos disponibles: \n- Grande: 5 espacios. Saldo: "+grande+".\n- Mediano: 3 espacios. Saldo 4.\n- Pequeño: 1 espacio. Saldo: 2.");
+        System.out.println("Tamaños de barcos disponibles: \n- Grande: 5 espacios. Saldo: "+grande+".\n- Mediano: 3 espacios. Saldo "+mediano+".\n- Pequeño: 1 espacio. Saldo: "+pequeño+".");
 
         for (int i = estadoFila; i < tablero.length; i++) {
             tamañoBarco=Utils.pedirCadenaUsuario("Introduce el tamaño del barco (Fila "+letras[i-1] +"): ");
@@ -55,7 +55,7 @@ public class Hundir_flota_8filas_8colum {
                     System.out.println("Introduce correctamente el tamaño, si no quieres poner nada en una fila, pulsa enter.");
                     tamañoBarco(tablero, i, grande, mediano, pequeño);
             }
-            System.out.println("Tamaños de barcos disponibles: \n- Grande: 5 espacios. Saldo: "+grande+".\n- Mediano: 3 espacios. Saldo 4.\n- Pequeño: 1 espacio. Saldo: 2.");
+            System.out.println("Tamaños de barcos disponibles: \n- Grande: 5 espacios. Saldo: "+grande+".\n- Mediano: 3 espacios. Saldo "+mediano+".\n- Pequeño: 1 espacio. Saldo: "+pequeño+".");
             mostrarTablero(tablero);
         }
     }
@@ -65,7 +65,7 @@ public class Hundir_flota_8filas_8colum {
         boolean valida = false;
         int coordenada = 0;
         do{
-            coordenada=Utils.pedirNumeroUsuario("Introduce el número para poner el barco: ");
+            coordenada=Utils.pedirNumeroUsuario("Introduce la posición numérica para poner el barco: ");
              if (coordenada+tamano-1 >= tablero.length){
                  System.out.println("Coordenada incorrecta");
              }else valida = true;
