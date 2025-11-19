@@ -33,7 +33,7 @@ public class Ejercicio4 {
         }
     }
 
-    private static void iniciararray(int[] busca) {
+    public static void iniciararray(int[] busca) {
         for (int i = 1; i < busca.length; i++) {
             busca[i]= Utils.numeroAleatorio(0, 100);
         }
