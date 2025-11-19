@@ -25,6 +25,14 @@ public class Principal {
         granja1.setearDatos();
         granja1.verAnimales();
 
+        int[] array=new int[10];
+
+        Granja[] numeroGranjas =new Granja[50];
+
+        for (int i = 0; i < numeroGranjas.length; i++) {
+            numeroGranjas[i].setHectareas(Utils.pedirNumeroAleatorio(20,150));
+        }
+
 //
 //        Persona persona1 = new Persona("Curro", 38, 174, "8989898989A");
 //        persona1.decirEdad();
