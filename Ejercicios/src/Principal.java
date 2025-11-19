@@ -2,6 +2,9 @@
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 
 import EJS_CLASE_Matrices.TresEnRaya;
+import OBJETOS.Animal;
+import OBJETOS.Granja;
+import OBJETOS.Persona;
 import Utilidades.Utils;
 
 public class Principal {
@@ -16,8 +19,31 @@ public class Principal {
 //        Utils.pedirNumero();
 //    }
     public static void main (String [] args){
+        Granja granja1 = new Granja();
+        granja1.inicializarAnimales();
+        granja1.verAnimales();
+        granja1.setearDatos();
+        granja1.verAnimales();
 
-        TresEnRaya.inicializarTablero();
+//
+//        Persona persona1 = new Persona("Curro", 38, 174, "8989898989A");
+//        persona1.decirEdad();
+//
+//
+//        Persona persona2 = new Persona("Marcos", 18, 170, "8787878787X");
+//        persona2.decirEdad();
+//        System.out.println(persona2);
+//        System.out.println(persona2.hashCode());
+//        System.out.println(persona2.getClass());
+//
+//        Persona persona3 = new Persona("Adrian", 19, 180, "5454545454H");
+//        persona3.decirHolas();
+//
+//        System.out.println(persona2.equals(persona3));
+
+
+
+//        TresEnRaya.inicializarTablero();
 
 //      Utils.numeroAleatorio();
 //      pedirnotas();
