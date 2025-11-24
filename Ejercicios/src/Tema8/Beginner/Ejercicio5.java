@@ -1,6 +1,6 @@
-package Tema8.Arrays;
+package Tema8.Beginner;
 
-import static Tema8.Arrays.Ejercicio4.iniciararray;
+import static Tema8.Beginner.Ejercicio4.iniciararray;
 
 public class Ejercicio5 {
     /**
