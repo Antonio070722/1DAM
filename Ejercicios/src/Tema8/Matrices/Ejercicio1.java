@@ -11,21 +11,52 @@ public class Ejercicio1 {
         inicializarMatriz(matriz);
         valoresAleatorios(matriz);
         mostrarMatriz(matriz);
-        comprobarDiagonal(matriz);
+//        comprobarDiagonal(matriz);
+        esDiagonalSuperior(matriz);
     }
 
-    private static void comprobarDiagonal(int[][] matriz) {
-        boolean esDiagonal=false;
+    private static boolean esDiagonalSuperior(int[][] matriz) {
         for (int i = 0; i < matriz.length; i++) {
-            for (int j = 0; j < matriz.length; j++) {
-                if (i == j) {
-
+            for (int j = 0; j < i; j++) {
+                System.out.println("Posicion comprobada. "+i+", "+j);
+                if (matriz[i][j]!=0){
+                    System.out.println("Valor diferente a 0 en "+ i +", "+ j);
+                    return false;
                 }
             }
         }
-        if (esDiagonal){
-            System.out.println("Es diagonal!!");
+        System.out.println("Todas las posiciones por debajo de la diagonal son 0, por " +
+                "lo tanto es diagonal superior");
+        return true;
+    }
+
+    private static void comprobarDiagonal(int[][] matriz) {
+        boolean esDiagonal=true;
+        for (int i = 0; i < matriz.length; i++) {
+            for (int j = 0; j < matriz.length; j++) {
+                if (i == j) {
+                    if(matriz[i][j]==0){
+                        esDiagonal=false;
+                        break;
+                    }
+                } else {
+                    if (matriz[i][j]!=0){
+                        esDiagonal=false;
+                        break;
+                    }
+                }
+            }
+            if (!esDiagonal){
+                break;
+            }
         }
+
+        if (esDiagonal){
+            System.out.println("Es diagonal!");
+        } else {
+            System.out.println("No es diagonal!");
+        }
+
     }
 
     private static void mostrarMatriz(int[][] matriz) {
