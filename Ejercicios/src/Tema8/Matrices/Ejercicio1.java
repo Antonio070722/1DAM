@@ -12,7 +12,45 @@ public class Ejercicio1 {
         valoresAleatorios(matriz);
         mostrarMatriz(matriz);
 //        comprobarDiagonal(matriz);
-        esDiagonalSuperior(matriz);
+//        esDiagonalSuperior(matriz);
+//        esDispersa(matriz);
+        arrayConValoresDeMatriz(matriz);
+    }
+
+    private static void arrayConValoresDeMatriz(int[][] matriz) {
+        int[] arrayMatriz = new int[matriz.length * matriz[0].length];
+        for (int i = 0; i < matriz.length; i++) {
+            for (int j = 0; j < matriz.length; j++) {
+                arrayMatriz[i]=matriz[i][j];
+            }
+        }
+
+    }
+
+    private static void esDispersa(int[][] matriz){
+        int filasconceros=0;
+        for (int i = 0; i < matriz.length; i++) {
+            int ceros=0;
+
+            for (int j = 0; j < matriz.length; j++) {
+                if (matriz[i][j]==0){
+                    ceros++;
+                    filasconceros++;
+                }
+            }
+            if (ceros>=1){
+                System.out.println("Hay al menos un cero en la fila ["+(i+1)+"] nº total: "+ceros);
+            } else if (ceros<1){
+                System.out.println("No hay ningún cero en la fila ["+(i+1)+"]");
+            }
+        }
+        if (filasconceros==5){
+            System.out.println("La matríz es dispersa");
+        } else {
+            System.out.println("La matríz no es dispersa al " +
+                    "no haber al menos un cero en todas las filas de la matriz");
+        }
+
     }
 
     private static boolean esDiagonalSuperior(int[][] matriz) {
@@ -80,7 +118,7 @@ public class Ejercicio1 {
     private static void valoresAleatorios(int[][] matriz) {
         for (int i = 0; i < matriz.length; i++) {
             for (int j = 0; j < matriz.length; j++) {
-                matriz[i][j]= Utils.pedirNumeroAleatorio(-10,10);
+                matriz[i][j]= Utils.pedirNumeroAleatorio(0,10);
             }
         }
     }
