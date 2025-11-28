@@ -1,5 +1,7 @@
 package Tema9;
 
+import Utilidades.Utils;
+
 public class Functions {
     /**
      Crea una biblioteca de funciones matemáticas que contenga las siguientes funciones.
@@ -34,4 +36,21 @@ public class Functions {
         que hacen las funciones a través de una entrada de parámetros
         introducida por el usuario.
      */
+
+    static void main(String[] args) {
+        isCapicua();
+    }
+
+    private static boolean isCapicua() {
+        int numOriginal = Utils.pedirNumeroUsuario("Dame un número para comprobar si es Capicúa");
+        int num=numOriginal;
+        int resto=0;
+        while(num>0){
+            resto=num%10;
+        }
+
+
+
+        return false;
+    }
 }
