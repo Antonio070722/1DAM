@@ -1,0 +1,11 @@
+package OBJETOS.Cuenta;
+
+public class CuentaAhorro extends CuentaBase{
+
+
+
+    public CuentaAhorro(int numeroCuenta, Usuario usuario, double saldo){
+
+    }
+
+}
