@@ -1,6 +1,7 @@
 package Tema9;
 
 import Utilidades.Utils;
+import jdk.jshell.execution.Util;
 
 public class Functions {
     /**
@@ -38,12 +39,163 @@ public class Functions {
      */
 
     static void main(String[] args) {
-        //isCapicua();
-        //isPrime(7);
-        //digits(122222);
-        //flip(1234);
-        //digitN(3256);
-        digitPosition();
+        System.out.println("\t1.\tIsCapicua\n\t2.\tIsPrime\n\t3.\tDigits\n\t4.\tFlip\n\t5.\tDigitN\n\t6.\tDigitPosition\n\t7.\tRemoveByBehind\n\t8.\tPasteByBack\n\t9.\tNumberSnippet\n\t10.\tNumbersTogether");
+        int op=Utils.pedirNumeroUsuario("\nIntroduce la operación a realizar: ");
+        switch (op) {
+            case 1:
+                isCapicua();
+                break;
+            case 2:
+                int primo=Utils.pedirNumeroUsuario("Introduce el número a comprobar si es o no primo: ");
+                isPrime(primo);
+                break;
+            case 3:
+                int digitos=Utils.pedirNumeroUsuario("Introduce un número para saber cuantos digitos tiene: ");
+                digits(digitos);
+                break;
+            case 4:
+                int invert=Utils.pedirNumeroUsuario("Introduce un número a invertir: ");
+                flip(invert);
+                break;
+            case 5:
+                int num=Utils.pedirNumeroUsuario("Introduce un número para extraer sus dígitos: ");
+                digitN(num);
+                break;
+            case 6:
+                digitPosition();
+                break;
+            case 7:
+                removeByBehind();
+                break;
+            case 8:
+                pasteByBack();
+                break;
+            case 9:
+                numberSnippet();
+                break;
+            case 10:
+                numbersTogether();
+                break;
+            default:
+                System.out.println("Introduce una opción válida");
+                break;
+        }
+    }
+
+    private static void numbersTogether() {
+        int num1=Utils.pedirNumeroUsuario("Introduce el primer numero: ");
+        int num2=Utils.pedirNumeroUsuario("Introduce el segundo numero(Dígitos máximos 4): ");
+        int numFinal=num1;
+        int aux=num2;
+        int numDigitos=0;
+        while(aux>0){
+            aux/=10;
+            numDigitos++;
+        }
+        switch(numDigitos){
+            case 1:
+                numFinal=numFinal*10+num2;
+                System.out.println("Números juntos: "+ numFinal);
+                break;
+            case 2:
+                numFinal=numFinal*100+num2;
+                System.out.println("Números juntos: "+ numFinal);
+                break;
+            case 3:
+                numFinal=numFinal*1000+num2;
+                System.out.println("Números juntos: "+ numFinal);
+                break;
+            case 4:
+                numFinal=numFinal*10000+num2;
+                System.out.println("Números juntos: "+ numFinal);
+                break;
+                default:
+                    System.out.println("Error");
+                    break;
+        }
+    }
+
+    private static void numberSnippet() {
+        int num=Utils.pedirNumeroUsuario("Introduce el número completo: ");
+        int posInicial=Utils.pedirNumeroUsuario("Introduce la posición inicial: ");
+        int posFinal=Utils.pedirNumeroUsuario("Introduce la posición final: ");
+        int aux=num;
+        int contador=0;
+        //Contar el número de dígitos para usarlo en el proceso de validación
+        while(aux>0){
+            aux/=10;
+            contador++;
+        }
+        //Validación
+        if (posFinal>contador || posInicial>posFinal || posInicial<=0){
+            System.out.println("Introduce datos válidos");
+        }else {
+            //Si entra en else, significa que los valores son correctos
+            //Quitamos la parte de la izquierda
+            int parte=num;
+            int vecesIzq=contador-posFinal;
+            for (int i = 0; i < vecesIzq; i++) {
+                parte/=10;
+            }
+            //Eliminamos dígitos de la derecha
+            int vecesDer=posInicial-1;
+            int pot=1;
+            for (int i = 0; i < vecesDer; i++) {
+                pot *=10;
+            }
+            parte=parte%pot;
+
+            System.out.println("Parte solicitada: "+parte);
+        }
+    }
+
+    private static void pasteByBack() {
+        int num= Utils.pedirNumeroUsuario("Introduce un número: ");
+        int add=Utils.pedirNumeroUsuario("Introduce el dígito a añadir al final: ");
+        int aux=add;
+        int cantidadDig=0;
+        while(aux>0){
+            aux/=10;
+            cantidadDig++;
+        }
+        if (cantidadDig>1){
+            System.out.println("Solo puedes añadir un dígito cada vez.");
+        }else {
+            num = num * 10 + add;
+            System.out.println("Número con el dígito añadido: " + num);
+        }
+        System.out.println("1.\t Añadir otro número.");
+        System.out.println("2.\t Salir");
+        int ac=Utils.pedirNumeroUsuario("Que deseas hacer ahora?: ");
+
+        switch (ac){
+            case 1:
+                pasteByBack();
+            break;
+            case 2:
+                break;
+        }
+    }
+
+    private static void removeByBehind() {
+        int num=Utils.pedirNumeroUsuario("Introduce el número completo: ");
+        int digitosElim=Utils.pedirNumeroUsuario("Introduce el número de dígitos a eliminar del número completo: ");
+        int aux=num;
+        int resto=0;
+        int cantDigitos=0;
+        while(aux>0){
+            resto=aux%10;
+            aux=aux/10;
+            cantDigitos++;
+        }
+        if (digitosElim>cantDigitos){
+            System.out.println("Introduce una cantidad válida de digitos a eliminar.");
+        }else {
+            for (int i = 0; i < digitosElim; i++) {
+                num /= 10;
+            }
+            System.out.println("Digitos eliminados, número final: "+num);
+        }
     }
 
     private static void digitPosition() {
