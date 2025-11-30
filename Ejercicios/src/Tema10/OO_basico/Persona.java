@@ -63,10 +63,10 @@ public class Persona {
     @Override
     public String toString() {
         return "Datos: " +
-                "nombre='" + nombre + '\'' +
-                ", apellido='" + apellido + '\'' +
+                "Nombre='" + nombre + '\'' +
+                ", Apellido='" + apellido + '\'' +
                 ", DNI='" + DNI + '\'' +
-                ", telefono=" + telefono +
+                ", Telefono=" + telefono +
                 '}';
     }
 }

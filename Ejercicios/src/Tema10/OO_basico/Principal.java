@@ -46,7 +46,14 @@ public class Principal {
                         String nombre = Utils.pedirCadenaUsuario("Introduce el nombre: ");
                         String apellido = Utils.pedirCadenaUsuario("Introduce el apellido: ");
                         String DNI = Utils.pedirCadenaUsuario("Introduce el DNI: ");
-                        int telefono = Utils.pedirNumeroUsuario("Introduce el telefono: ");
+                        int telefono;
+
+                        do {
+                            telefono = Utils.pedirNumeroUsuario("Introduce el telefono: ");
+                            if (telefono <111111111||telefono>999999999){
+                                System.out.println("ERROR: Introduce correctamente el teléfono.");
+                            }
+                        }while(telefono<111111111||telefono>999999999);
 
                         personaSeleccionada.setNombre(nombre);
                         personaSeleccionada.setApellido(apellido);
@@ -57,7 +64,10 @@ public class Principal {
                     }
                     break;
                 case 2:
-                    System.out.println(Arrays.toString(personas));
+                    for (int i = 0; i < personas.length; i++) {
+                        System.out.print("Persona"+(i+1)+"\t");
+                        System.out.println(personas[i]);
+                    }
                     break;
             }
         }while(op != 0);
