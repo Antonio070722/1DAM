@@ -18,7 +18,7 @@ public class CuentaCorriente extends CuentaBase{
 
     @Override
     public boolean agregarSaldo() {
-        return super.agregarSaldo();
+        return super.agregarSaldo(100);
     }
 
     @Override

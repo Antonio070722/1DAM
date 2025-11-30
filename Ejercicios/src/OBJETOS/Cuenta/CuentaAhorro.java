@@ -8,4 +8,8 @@ public class CuentaAhorro extends CuentaBase{
 
     }
 
+    @Override
+    public boolean agregarSaldo() {
+        return false;
+    }
 }

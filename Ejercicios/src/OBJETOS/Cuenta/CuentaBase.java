@@ -46,9 +46,11 @@ public abstract class  CuentaBase implements Cuenta{
     }
 
     @Override
-    public boolean agregarSaldo() {
+    public boolean agregarSaldo(double saldo) {
         return false;
     }
+
+    public abstract boolean agregarSaldo();
 
     @Override
     public boolean vincularCuenta() {
