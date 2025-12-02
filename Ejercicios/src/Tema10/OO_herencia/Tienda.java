@@ -34,7 +34,7 @@ public class Tienda {
             System.out.println("\nDatos actualizados");
 
             System.out.println("Nombre: "+arrayProductos[i].getNombre()+"\n"+"Código: "+arrayProductos[i].getCodigo()+"\n"+"Precio: "+arrayProductos[i].getPrecio());
-            if(TieneCaducidad.equals("Si")){
+            if(TieneCaducidad.toLowerCase().equals("Si")){
                 System.out.println("Caducidad: "+((Perecederos) arrayProductos[i]).getFecha_Caducidad());
             }
         }
