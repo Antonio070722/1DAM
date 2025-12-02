@@ -18,21 +18,31 @@ public class MaximaSuma {
     }
 
     private static void sumaEntreNums(int[] maximaSuma) {
-        for (int i = 1; i < maximaSuma.length; i++) {
-            for (int j = 0; j < maximaSuma.length; j++) {
-                int suma = maximaSuma[i] + maximaSuma[j];
-                System.out.println(suma);
-            }
-            for (int j = 2; j < maximaSuma.length; j++) {
+        int suma = 0;
+        int sumaMaxima = 0;
+        int a = 0;
+        int b = 0;
 
+        for (int i = 0; i < maximaSuma.length; i++) {
+            for (int j = i+1; j < maximaSuma.length; j++) {
+                suma = maximaSuma[i] + maximaSuma[j];
+                if (suma > sumaMaxima){
+                    sumaMaxima = suma;
+                    a = maximaSuma[i];
+                    b = maximaSuma[j];
+                }
+                System.out.println("Suma " + suma);
             }
+
         }
+        System.out.println(" La suma de los dos elementos son " + a + " " + b + ". Y la suma máxima es: " + sumaMaxima);
     }
 
     private static void inicializarMaxSuma(int [] maximaSuma) {
         Random random = new Random();
         for (int i = 0; i < maximaSuma.length; i++) {
             maximaSuma[i] = random.nextInt(21);
+            System.out.println(maximaSuma[i]);
         }
     }
 }
