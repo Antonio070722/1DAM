@@ -22,7 +22,7 @@ public class Tienda {
             String nombre= Utils.pedirCadenaUsuario("Nombre: ");
             String precio= Utils.pedirCadenaUsuario("Precio: ");
             String TieneCaducidad= Utils.pedirCadenaUsuario("Es un producto perecedero?: ");
-            if (TieneCaducidad.equals("Si")) {
+            if (TieneCaducidad.equals("si")) {
                 String caducidad = Utils.pedirCadenaUsuario("Introduce la fecha de caducidad");
                 arrayProductos[i] = new Perecederos(codigo, nombre, precio, caducidad);
             }else arrayProductos[i] = new Productos(codigo, nombre, precio);
