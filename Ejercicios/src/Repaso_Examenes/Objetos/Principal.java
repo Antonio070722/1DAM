@@ -45,7 +45,7 @@ public class Principal {
                 System.out.println("Ha fallado!!");
             }
         }
-            System.out.println("Pulsa para ENTER para la siguiente ronda. Rondas restantes: "+rondas);
+            System.out.println("Pulsa ENTER. Rondas restantes: "+rondas);
             rondas--;
             sc.nextLine();
         }while(rondas>=0);
