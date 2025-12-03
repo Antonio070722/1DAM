@@ -12,8 +12,13 @@ public class Jugador {
     public Jugador(String nombre, int canastas, int probabilidad_acierto, int canastasFalladas) {
         this.nombre = nombre;
         this.canastas = canastas;
-        this.probabilidad_acierto = random.nextInt(100)+20;
+        this.probabilidad_acierto = random.nextInt(81)+20;
         this.canastasFalladas = canastasFalladas;
+    }
+
+    public Jugador(String nombre){
+        this.nombre = nombre;
+        this.probabilidad_acierto = random.nextInt(81)+20;
     }
 
     public String getNombre() {
@@ -32,13 +37,17 @@ public class Jugador {
         this.canastas = canastas;
     }
 
+    public void anotarCanastas() {
+        this.canastas++;
+    }
+
     public int getProbabilidad_acierto() {
         return probabilidad_acierto;
     }
 
-    public void setProbabilidad_acierto(int probabilidad_acierto) {
-        this.probabilidad_acierto = probabilidad_acierto;
-    }
+//    public void setProbabilidad_acierto(int probabilidad_acierto) {
+//        this.probabilidad_acierto = probabilidad_acierto;
+//    }
 
     public int getCanastasFalladas() {
         return canastasFalladas;
@@ -46,6 +55,10 @@ public class Jugador {
 
     public void setCanastasFalladas(int canastasFalladas) {
         this.canastasFalladas = canastasFalladas;
+    }
+
+    public void falloCanasta(){
+        this.canastasFalladas--;
     }
 
     @Override
