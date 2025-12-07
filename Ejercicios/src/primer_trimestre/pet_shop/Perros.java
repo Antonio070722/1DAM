@@ -1,9 +1,12 @@
 package primer_trimestre.pet_shop;
 
 public class Perros {
-    String color;
-    String raza;
-    TIPO_PELO_PERRO tipoPeloPerro;
+    public String color;
+    public String raza;
+    public TIPO_PELO_PERRO tipoPeloPerro;
+    public double pedigree;
+    public static final double PRECIO_SIN_PELIGREE=100;
+    public static final double PRECIO_CON_PELIGREE=200;
 
     public Perros(String color,  String raza, TIPO_PELO_PERRO tipoPeloPerro) {
         this.color = color;
@@ -35,12 +38,21 @@ public class Perros {
         this.tipoPeloPerro = tipoPeloPerro;
     }
 
+    public void getPedigree(double pedigree) {
+        this.pedigree = pedigree;
+    }
+
+    public void setPedigree(double pedigree) {
+        this.pedigree = pedigree;
+    }
+
     @Override
     public String toString() {
         return "Perros{" +
                 "color='" + color + '\'' +
                 ", raza='" + raza + '\'' +
                 ", tipoPeloPerro=" + tipoPeloPerro +
+                ", pedigree='" + pedigree + '\'' +
                 '}';
     }
 }

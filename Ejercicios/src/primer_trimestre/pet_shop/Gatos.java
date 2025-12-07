@@ -4,6 +4,7 @@ public class Gatos {
     public String color;
     public String raza;
     public TIPO_PELO_GATO tipoPeloGato;
+    public static final double precio_gato=50;
 
 
     public Gatos(String color, String raza, TIPO_PELO_GATO tipoPeloGato) {
