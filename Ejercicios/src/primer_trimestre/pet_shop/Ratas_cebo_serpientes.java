@@ -1,6 +1,6 @@
 package primer_trimestre.pet_shop;
 
-public class Ratas_cebo_serpientes {
+public class Ratas_cebo_serpientes extends Animales{
     public double peso;
     public double tamaño;
     public static final double  precioRata=2;

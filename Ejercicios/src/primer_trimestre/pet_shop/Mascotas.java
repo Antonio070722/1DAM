@@ -1,6 +1,6 @@
 package primer_trimestre.pet_shop;
 
-public class Mascotas {
+public class Mascotas extends Animales{
     int CHIP;
     String nombreMascota;
     String nombreDueno;

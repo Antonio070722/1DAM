@@ -1,6 +1,6 @@
 package primer_trimestre.pet_shop;
 
-public class Pájaros {
+public class Pájaros extends Animales{
     public String color;
     public TIPO_LORO tipoLoro;
     public static final double precioPajaro=10;
