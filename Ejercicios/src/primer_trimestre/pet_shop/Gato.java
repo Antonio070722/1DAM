@@ -54,10 +54,18 @@ public class Gato extends Mascotas{
 
     @Override
     public String toString() {
-        return "Gatos{" +
+        return "Gato{" +
                 "color='" + color + '\'' +
                 ", raza='" + raza + '\'' +
                 ", tipoPeloGato=" + tipoPeloGato +
+                ", CHIP=" + CHIP +
+                ", nombreMascota='" + nombreMascota + '\'' +
+                ", nombreDueno='" + nombreDueno + '\'' +
+                ", apellidoDueno='" + apellidoDueno + '\'' +
+                ", DNI='" + DNI + '\'' +
+                ", sexo=" + sexo +
+                ", edad=" + edad +
+                ", EAN='" + EAN + '\'' +
                 '}';
     }
 }

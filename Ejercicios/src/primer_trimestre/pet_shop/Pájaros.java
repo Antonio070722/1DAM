@@ -32,6 +32,9 @@ public class Pájaros extends Animales{
         return "Pájaros{" +
                 "color='" + color + '\'' +
                 ", tipoLoro=" + tipoLoro +
+                ", sexo=" + sexo +
+                ", edad=" + edad +
+                ", EAN='" + EAN + '\'' +
                 '}';
     }
 }

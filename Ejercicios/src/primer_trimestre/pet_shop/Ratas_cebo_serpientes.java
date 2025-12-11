@@ -33,6 +33,9 @@ public class Ratas_cebo_serpientes extends Animales{
         return "Ratas_cebo_serpientes{" +
                 "peso=" + peso +
                 ", tamaño=" + tamaño +
+                ", sexo=" + sexo +
+                ", edad=" + edad +
+                ", EAN='" + EAN + '\'' +
                 '}';
     }
 

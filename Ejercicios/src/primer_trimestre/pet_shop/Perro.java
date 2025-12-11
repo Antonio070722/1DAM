@@ -66,11 +66,19 @@ public class Perro extends Mascotas{
 
     @Override
     public String toString() {
-        return "Perros{" +
+        return "Perro{" +
                 "color='" + color + '\'' +
                 ", raza='" + raza + '\'' +
                 ", tipoPeloPerro=" + tipoPeloPerro +
-                ", pedigree='" + peligree + '\'' +
+                ", peligree=" + peligree +
+                ", CHIP=" + CHIP +
+                ", nombreMascota='" + nombreMascota + '\'' +
+                ", nombreDueno='" + nombreDueno + '\'' +
+                ", apellidoDueno='" + apellidoDueno + '\'' +
+                ", DNI='" + DNI + '\'' +
+                ", sexo=" + sexo +
+                ", edad=" + edad +
+                ", EAN='" + EAN + '\'' +
                 '}';
     }
 }

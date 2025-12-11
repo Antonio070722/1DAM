@@ -75,6 +75,9 @@ public class Mascotas extends Animales{
                 ", nombreDueno='" + nombreDueno + '\'' +
                 ", apellidoDueno='" + apellidoDueno + '\'' +
                 ", DNI='" + DNI + '\'' +
+                ", sexo=" + sexo +
+                ", edad=" + edad +
+                ", EAN='" + EAN + '\'' +
                 '}';
     }
 }
