@@ -1,15 +1,22 @@
 package primer_trimestre.pet_shop;
 
 public class Ratas_cebo_serpientes extends Animales{
-    public double peso;
-    public double tamaño;
+    public int peso;//En gramos
+    public int tamaño; //En cm
     public static final double  precioRata=2;
+
+    public Ratas_cebo_serpientes(SEXO sexo, int edad, String EAN, int peso, int tamaño) {
+        super(sexo, edad, EAN);
+        this.peso=peso;
+        this.tamaño=tamaño;
+    }
+
 
     public double getPeso() {
         return peso;
     }
 
-    public void setPeso(double peso) {
+    public void setPeso(int peso) {
         this.peso = peso;
     }
 
@@ -17,7 +24,7 @@ public class Ratas_cebo_serpientes extends Animales{
         return tamaño;
     }
 
-    public void setTamaño(double tamaño) {
+    public void setTamaño(int tamaño) {
         this.tamaño = tamaño;
     }
 
@@ -28,4 +35,15 @@ public class Ratas_cebo_serpientes extends Animales{
                 ", tamaño=" + tamaño +
                 '}';
     }
+
+    public boolean aptoVenta(){
+        if (peso<200){
+            return false;
+        }
+        if (tamaño<5){
+            return false;
+        }
+        return true;
+    }
+
 }

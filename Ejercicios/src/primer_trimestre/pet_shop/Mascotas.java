@@ -7,16 +7,19 @@ public class Mascotas extends Animales{
     String apellidoDueno;
     String DNI;
 
-    public Mascotas(int CHIP){
+    public Mascotas(SEXO sexo, int edad, String EAN, int CHIP){
+        super(sexo, edad, EAN);
         this.CHIP=CHIP;
     }
 
-    public Mascotas(String nombreMascota, int CHIP){
+    public Mascotas(SEXO sexo, int edad, String EAN, String nombreMascota, int CHIP){
+        super(sexo, edad, EAN);
         this.nombreMascota=nombreMascota;
         this.CHIP=CHIP;
     }
 
-    public Mascotas(String nombreMascota, int CHIP, String nombreDueno, String apellidoDueno, String DNI){
+    public Mascotas(SEXO sexo, int edad, String EAN, String nombreMascota, int CHIP, String nombreDueno, String apellidoDueno, String DNI){
+        super(sexo, edad, EAN);
         this.nombreMascota=nombreMascota;
         this.CHIP=CHIP;
         this.nombreDueno=nombreDueno;

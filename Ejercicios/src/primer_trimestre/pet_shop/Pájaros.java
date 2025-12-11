@@ -5,6 +5,12 @@ public class Pájaros extends Animales{
     public TIPO_LORO tipoLoro;
     public static final double precioPajaro=10;
 
+    public Pájaros(SEXO sexo, int edad, String EAN, String color, TIPO_LORO tipoLoro) {
+        super(sexo, edad, EAN);
+        this.color=color;
+        this.tipoLoro=tipoLoro;
+    }
+
     public String getColor() {
         return color;
     }

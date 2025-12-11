@@ -8,24 +8,24 @@ public class Perro extends Mascotas{
     public static final double PRECIO_SIN_PELIGREE=100;
     public static final double PRECIO_CON_PELIGREE=200;
 
-    public Perro(String color,  String raza, TIPO_PELO_PERRO tipoPeloPerro, double pedigree, int CHIP) {
-        super(CHIP);
+    public Perro(SEXO sexo, int edad, String EAN, String color,  String raza, TIPO_PELO_PERRO tipoPeloPerro, double pedigree, int CHIP) {
+        super(sexo, edad, EAN, CHIP);
         this.color = color;
         this.raza = raza;
         this.tipoPeloPerro = tipoPeloPerro;
         this.peligree=pedigree;
     }
 
-    public Perro(String color,  String raza, TIPO_PELO_PERRO tipoPeloPerro, double pedigree, int CHIP, String nombreMascota) {
-        super(nombreMascota, CHIP);
+    public Perro(SEXO sexo, int edad, String EAN, String color,  String raza, TIPO_PELO_PERRO tipoPeloPerro, double pedigree, int CHIP, String nombreMascota) {
+        super(sexo, edad, EAN, nombreMascota, CHIP);
         this.color = color;
         this.raza = raza;
         this.tipoPeloPerro = tipoPeloPerro;
         this.peligree=pedigree;
     }
 
-    public Perro(String color,  String raza, TIPO_PELO_PERRO tipoPeloPerro, double pedigree, int CHIP, String nombreMascota, String nombreDueno, String apellidoDueno, String DNI) {
-        super(nombreMascota, CHIP, nombreDueno, apellidoDueno, DNI);
+    public Perro(SEXO sexo, int edad, String EAN, String color,  String raza, TIPO_PELO_PERRO tipoPeloPerro, double pedigree, int CHIP, String nombreMascota, String nombreDueno, String apellidoDueno, String DNI) {
+        super(sexo, edad, EAN, nombreMascota, CHIP, nombreDueno, apellidoDueno, DNI);
         this.color = color;
         this.raza = raza;
         this.tipoPeloPerro = tipoPeloPerro;
